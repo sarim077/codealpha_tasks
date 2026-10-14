@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Image Gallery with Lightbox</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <div class="background-glow glow-1"></div>
+  <div class="background-glow glow-2"></div>
+
+  <header class="gallery-header">
+    <div class="badge">CodeAlpha Frontend Task 1</div>
+    <h1 class="title">Visual Showcase & Lightbox Gallery</h1>
+    <p class="subtitle">Filter through handpicked curated captures with responsive grid, smooth animations, and interactive modal lightbox viewer.</p>
+    
+    <!-- Filter Bar -->
+    <div class="filter-container">
+      <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-layer-group"></i> All Works</button>
+      <button class="filter-btn" data-filter="nature"><i class="fa-solid fa-leaf"></i> Nature</button>
+      <button class="filter-btn" data-filter="architecture"><i class="fa-solid fa-city"></i> Architecture</button>
+      <button class="filter-btn" data-filter="tech"><i class="fa-solid fa-microchip"></i> Technology</button>
+      <button class="filter-btn" data-filter="travel"><i class="fa-solid fa-compass"></i> Travel</button>
+    </div>
+  </header>
+
+  <main class="gallery-wrapper">
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Items generated dynamically or static with data attributes -->
+    </div>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog">
+    <div class="lightbox-overlay" id="lightboxOverlay"></div>
+    <div class="lightbox-container">
+      <button class="lightbox-close" id="closeBtn" title="Close (Esc)"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div class="lightbox-media-wrapper">
+        <button class="nav-btn prev-btn" id="prevBtn" title="Previous Image (Left Arrow)"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="image-stage">
+          <img src="" alt="" id="lightboxImg" class="lightbox-img">
+          <div class="spinner" id="imageSpinner"></div>
+        </div>
+        <button class="nav-btn next-btn" id="nextBtn" title="Next Image (Right Arrow)"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+
+      <div class="lightbox-meta">
+        <div class="meta-info">
+          <span class="meta-category" id="metaCategory">Category</span>
+          <h2 class="meta-title" id="metaTitle">Artwork Title</h2>
+          <p class="meta-desc" id="metaDesc">Description goes here.</p>
+        </div>
+        <div class="meta-actions">
+          <span class="counter" id="itemCounter">1 / 8</span>
+          <a href="#" id="downloadBtn" target="_blank" download class="action-btn" title="View Full High-Res"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="gallery-footer">
+    <p>Crafted for <strong>CodeAlpha</strong> Internship Task 1 &copy; 2026. Fully responsive & keyboard navigable.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Glassmorphic Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <main class="calculator-app">
+    <div class="calculator-container">
+      <!-- Calculator Header -->
+      <div class="calc-header">
+        <div class="brand">
+          <span class="brand-dot"></span>
+          <span class="brand-text">CodeAlpha Calc</span>
+        </div>
+        <div class="header-actions">
+          <button class="theme-toggle" id="historyToggleBtn" title="Toggle Calculation History">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Display Screen -->
+      <div class="calc-screen">
+        <div class="expression" id="calcHistory"></div>
+        <div class="result" id="calcDisplay">0</div>
+      </div>
+
+      <!-- Keypad -->
+      <div class="calc-keypad">
+        <button class="btn fn-btn" data-action="all-clear">AC</button>
+        <button class="btn fn-btn" data-action="delete"><i class="fa-solid fa-delete-left"></i></button>
+        <button class="btn fn-btn" data-action="percent">%</button>
+        <button class="btn op-btn" data-op="÷">÷</button>
+
+        <button class="btn num-btn" data-num="7">7</button>
+        <button class="btn num-btn" data-num="8">8</button>
+        <button class="btn num-btn" data-num="9">9</button>
+        <button class="btn op-btn" data-op="×">×</button>
+
+        <button class="btn num-btn" data-num="4">4</button>
+        <button class="btn num-btn" data-num="5">5</button>
+        <button class="btn num-btn" data-num="6">6</button>
+        <button class="btn op-btn" data-op="-">−</button>
+
+        <button class="btn num-btn" data-num="1">1</button>
+        <button class="btn num-btn" data-num="2">2</button>
+        <button class="btn num-btn" data-num="3">3</button>
+        <button class="btn op-btn" data-op="+">+</button>
+
+        <button class="btn fn-btn" data-action="toggle-sign">±</button>
+        <button class="btn num-btn" data-num="0">0</button>
+        <button class="btn num-btn" data-action="decimal">.</button>
+        <button class="btn equals-btn" data-action="calculate">=</button>
+      </div>
+
+      <!-- History Dropdown / Drawer -->
+      <div class="history-panel" id="historyPanel">
+        <div class="history-header">
+          <span>Recent History</span>
+          <button id="clearHistoryBtn" class="clear-history-btn">Clear</button>
+        </div>
+        <div class="history-list" id="historyList">
+          <div class="empty-history">No calculations yet</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Keyboard Help Badge -->
+    <div class="keyboard-hints">
+      <i class="fa-regular fa-keyboard"></i> Full keyboard support enabled (0-9, +, -, *, /, Enter, Backspace, Esc)
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
